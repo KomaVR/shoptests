@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft Shop</title>
+    <title>Minecraft Rank Shop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Global reset */
@@ -14,13 +14,12 @@
             font-family: 'Arial', sans-serif;
         }
         body {
-            background-color: #1e1e1e;
+            background-color: #121212;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             overflow: hidden;
-            color: #fff;
         }
         .shop-container {
             display: grid;
@@ -36,9 +35,9 @@
         }
 
         .item-card {
-            background: linear-gradient(145deg, #2d2d2d, #161616);
+            background: linear-gradient(145deg, #1e1e1e, #333);
             border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             padding: 30px 20px;
             position: relative;
             overflow: hidden;
@@ -51,47 +50,45 @@
         }
         .item-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
             opacity: 1;
         }
 
         .item-card i {
             font-size: 60px;
-            color: #00d8ff;
+            color: #00BFFF;
             margin-bottom: 20px;
             transition: color 0.3s;
         }
 
         .item-card:hover i {
-            color: #00b2cc;
+            color: #1E90FF;
         }
 
         .item-card h3 {
             font-size: 24px;
             margin: 15px 0;
             font-weight: bold;
-            color: #00d8ff;
+            color: #00BFFF;
             text-transform: capitalize;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
         }
 
         .item-card p {
             font-size: 16px;
-            color: #b3b3b3;
+            color: #ddd;
             margin-bottom: 20px;
             line-height: 1.5;
             transition: color 0.3s ease;
         }
 
         .item-card:hover p {
-            color: #e6e6e6;
+            color: #ffffff;
         }
 
         .item-card a {
             display: inline-block;
             padding: 15px 25px;
-            background-color: #00d8ff;
+            background-color: #00BFFF;
             color: #fff;
             text-decoration: none;
             border-radius: 30px;
@@ -103,12 +100,17 @@
         }
 
         .item-card a:hover {
-            background-color: #00b2cc;
+            background-color: #1E90FF;
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
-        /* Animation for item cards */
+        /* Neon glow effect */
+        .item-card h3, .item-card a {
+            text-shadow: 0 0 5px #00BFFF, 0 0 10px #00BFFF, 0 0 15px #00BFFF, 0 0 20px #1E90FF;
+        }
+
+        /* Add animation for all items */
         .item-card {
             animation: fadeIn 1s ease-out;
         }
@@ -124,14 +126,20 @@
             }
         }
 
-        /* Card layout and responsive adjustments */
+        /* Card layout enhancements */
         .shop-container {
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            padding: 20px;
+            display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 20px;
             max-width: 1200px;
             padding: 20px;
         }
 
+        /* Add responsive design */
         @media screen and (max-width: 768px) {
             .shop-container {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -139,32 +147,22 @@
             }
         }
 
-        /* Hover effects for buttons */
-        .item-card a {
-            background-color: #00d8ff;
-            transition: all 0.4s ease;
+        /* Improve Typography */
+        h1, h2, h3 {
+            font-family: 'Arial', sans-serif;
+            color: #00BFFF;
         }
 
-        .item-card a:hover {
-            background-color: #00b2cc;
-            transform: scale(1.1);
-        }
-
-        /* Pixel font style for Minecraft theme */
-        .item-card h3, .item-card p {
-            font-family: 'Minecraft', sans-serif;
-        }
-
-        /* Add glowing effect on the background */
+        /* Add a smooth page background */
         .background {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(0, 216, 255, 0.2) 20%, rgba(0, 0, 0, 0.8) 70%);
+            background: linear-gradient(120deg, #121212, #333333);
             z-index: -1;
-            opacity: 0.3;
+            opacity: 0.1;
         }
     </style>
 </head>
@@ -173,43 +171,21 @@
     <div class="background"></div>
 
     <div class="shop-container">
-        <div class="item-card" onclick="window.location.href='https://payment-link.com/minecraft-sword'">
-            <i class="fas fa-sword"></i>
-            <h3>Minecraft Sword</h3>
-            <p>Get your diamond sword and venture into the Minecraft world with strength!</p>
-            <a href="https://payment-link.com/minecraft-sword">Buy Now</a>
+        <!-- Rare Rank -->
+        <div class="item-card" onclick="window.location.href='https://payment-link.com/rare-rank'">
+            <i class="fas fa-crown"></i>
+            <h3>Rare Rank</h3>
+            <p>Exclusive rank with special permissions, only $4.99.</p>
+            <a href="https://payment-link.com/rare-rank">Buy Now</a>
         </div>
-        <div class="item-card" onclick="window.location.href='https://payment-link.com/minecraft-shield'">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Minecraft Shield</h3>
-            <p>Defend yourself with the powerful Minecraft shield!</p>
-            <a href="https://payment-link.com/minecraft-shield">Buy Now</a>
+
+        <!-- Spirit Rank -->
+        <div class="item-card" onclick="window.location.href='https://payment-link.com/spirit-rank'">
+            <i class="fas fa-ghost"></i>
+            <h3>Spirit Rank</h3>
+            <p>Ultimate rank with enhanced abilities, only $9.99.</p>
+            <a href="https://payment-link.com/spirit-rank">Buy Now</a>
         </div>
-        <div class="item-card" onclick="window.location.href='https://payment-link.com/minecraft-pickaxe'">
-            <i class="fas fa-pickaxe"></i>
-            <h3>Pickaxe</h3>
-            <p>Mine efficiently with the enchanted pickaxe. Perfect for your adventures!</p>
-            <a href="https://payment-link.com/minecraft-pickaxe">Buy Now</a>
-        </div>
-        <div class="item-card" onclick="window.location.href='https://payment-link.com/minecraft-diamond'">
-            <i class="fas fa-gem"></i>
-            <h3>Diamond</h3>
-            <p>Get rare diamonds to craft epic tools and armor!</p>
-            <a href="https://payment-link.com/minecraft-diamond">Buy Now</a>
-        </div>
-        <div class="item-card" onclick="window.location.href='https://payment-link.com/minecraft-bow'">
-            <i class="fas fa-bow-arrow"></i>
-            <h3>Bow and Arrows</h3>
-            <p>Engage in long-range combat with the bow and arrows!</p>
-            <a href="https://payment-link.com/minecraft-bow">Buy Now</a>
-        </div>
-        <div class="item-card" onclick="window.location.href='https://payment-link.com/minecraft-armor'">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Full Armor Set</h3>
-            <p>Protect yourself with the ultimate armor set!</p>
-            <a href="https://payment-link.com/minecraft-armor">Buy Now</a>
-        </div>
-        <!-- Add more items as needed -->
     </div>
 
 </body>
