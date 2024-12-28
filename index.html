@@ -124,6 +124,47 @@
             }
         }
 
+        /* About Page Styling */
+        .about-content {
+            display: block;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-content h2 {
+            font-size: 32px;
+            color: #00BFFF;
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px #00BFFF, 0 0 10px #00BFFF;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            color: #fff;
+            line-height: 1.5;
+        }
+
+        /* Minecraft Tab Styling */
+        .minecraft-content {
+            font-size: 22px;
+            color: #fff;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .minecraft-content h2 {
+            font-size: 28px;
+            color: #00BFFF;
+        }
+
+        .minecraft-content p {
+            font-size: 20px;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -133,15 +174,29 @@
     <!-- Navigation Tabs -->
     <div class="nav-tabs">
         <a href="#about">About Me</a>
-        <a href="#discord">Discord</a>
+        <a href="https://discord.gg/YOUR_DISCORD_INVITE_LINK" target="_blank">Discord</a>
         <a href="#minecraft">Minecraft Server</a>
-        <a href="shop.html">Shop</a> <!-- Link to Shop page -->
+        <a href="shop.html">Shop</a>
     </div>
 
     <!-- Main Content Area -->
     <div class="main-content">
         <h1>Welcome to My Page!</h1>
         <p>This is the main page for the Minecraft community. Click on the tabs above to learn more about me, join my Discord server, access the Minecraft server, or visit the shop.</p>
+    </div>
+
+    <!-- About Section -->
+    <div class="about-content" id="about">
+        <h2>About Us</h2>
+        <p>Welcome to our Minecraft community! We are a group of passionate players who love to create, explore, and have fun together. Our server offers a unique experience with custom ranks, exciting gameplay, and a friendly environment. Join us on our adventures, meet new friends, and enjoy the endless possibilities in Minecraft!</p>
+    </div>
+
+    <!-- Minecraft Section -->
+    <div class="minecraft-content" id="minecraft">
+        <h2>Play Minecraft with Us!</h2>
+        <p>Join our Minecraft server today and explore a world full of excitement and adventure. The server IP is:</p>
+        <h3 style="color: #00BFFF;">carsonvrsmp.biomehost.com</h3>
+        <p>We welcome players of all ages to come and play with us. We have custom features, friendly players, and much more! See you in the game!</p>
     </div>
 
 </body>
