@@ -4,9 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background-color: #121212;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, #121212, #333333);
+            z-index: -1;
+            opacity: 0.1;
+        }
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            gap: 30px;
+        }
+        .nav-tabs a {
+            text-decoration: none;
+            color: #00BFFF;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 15px 30px;
+            border: 2px solid #00BFFF;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .nav-tabs a:hover {
+            background-color: #00BFFF;
+            color: #121212;
+            transform: translateY(-5px);
+        }
+        .about-content {
+            color: #fff;
+            font-size: 18px;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .about-content h2 {
+            font-size: 36px;
+            color: #00BFFF;
+            text-shadow: 0 0 5px #00BFFF, 0 0 10px #00BFFF, 0 0 15px #00BFFF, 0 0 20px #1E90FF;
+        }
+    </style>
 </head>
 <body>
+    <div class="background"></div>
     <div class="nav-tabs">
         <a href="index.html">Home</a>
         <a href="https://discord.gg/YOUR_DISCORD_INVITE_LINK" target="_blank">Discord</a>
