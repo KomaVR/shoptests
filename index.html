@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background-color: #121212;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+        }
+
+        /* Background gradient */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, #121212, #333333);
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            gap: 30px;
+        }
+
+        .nav-tabs a {
+            text-decoration: none;
+            color: #00BFFF;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 15px 30px;
+            border: 2px solid #00BFFF;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-tabs a:hover {
+            background-color: #00BFFF;
+            color: #121212;
+            transform: translateY(-5px);
+        }
+
+        /* Main content area */
+        .main-content {
+            color: #fff;
+            font-size: 18px;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Neon glow effect */
+        .main-content h1 {
+            font-size: 36px;
+            color: #00BFFF;
+            text-shadow: 0 0 5px #00BFFF, 0 0 10px #00BFFF, 0 0 15px #00BFFF, 0 0 20px #1E90FF;
+        }
+
+        /* Content hover effect */
+        .main-content:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Add smooth transition to all elements */
+        .nav-tabs a, .main-content {
+            transition: all 0.3s ease;
+        }
+
+        /* Add animation for the page */
+        .main-content {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Add responsive design */
+        @media screen and (max-width: 768px) {
+            .nav-tabs a {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+
+            .main-content {
+                font-size: 16px;
+                padding: 15px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+        <a href="#about">About Me</a>
+        <a href="#discord">Discord</a>
+        <a href="#minecraft">Minecraft Server</a>
+        <a href="shop.html">Shop</a> <!-- Link to Shop page -->
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <h1>Welcome to My Page!</h1>
+        <p>This is the main page for the Minecraft community. Click on the tabs above to learn more about me, join my Discord server, access the Minecraft server, or visit the shop.</p>
+    </div>
+
+</body>
+</html>
